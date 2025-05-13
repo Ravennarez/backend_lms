@@ -18,7 +18,7 @@ class AdminController extends Controller
     try {
         $stats = [
             'books_count' => Book::count(),
-            'users_count' => User::count(),
+            'users_count' => User::where('role', '!=', 'admin')->count(),
             'transactions_count' => Transaction::where('status', 'borrowed')->count(),
             'overdue_count' => Transaction::where('due_date', '<', now())
                 ->where('status', 'borrowed')
@@ -102,7 +102,8 @@ class AdminController extends Controller
     public function getUsers(Request $request)
 {
     try {
-        $query = User::query();
+         $query = User::where('role', '!=', 'admin'); // Exclude admin users
+        //$query = User::query();
 
         // Search functionality
         if ($request->has('search')) {
