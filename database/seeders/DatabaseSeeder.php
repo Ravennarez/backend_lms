@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-       // Create admin user
+        // Create admin user
         $admin = User::create([
             'name' => 'Library Admin',
             'email' => 'admin@library.com',
@@ -28,50 +28,50 @@ class DatabaseSeeder extends Seeder
         // Create sample books
         $books = [
             [
-                'title' => 'To Kill a Mockingbird',
-                'author' => 'Harper Lee',
-                'isbn' => '9780061120084',
-                'genre' => 'Fiction',
-                'description' => 'A novel about the serious issues of rape and racial inequality.',
+                'title' => 'The Psychology of Money',
+                'author' => 'Morgan Housel',
+                'isbn' => '9780857197689',
+                'genre' => 'Finance',
+                'description' => 'Timeless lessons on wealth, greed, and happiness.',
                 'total_copies' => 5,
                 'available_copies' => 5,
             ],
             [
-                'title' => '1984',
-                'author' => 'George Orwell',
-                'isbn' => '9780451524935',
-                'genre' => 'Dystopian',
-                'description' => 'A dystopian social science fiction novel and cautionary tale.',
-                'total_copies' => 3,
-                'available_copies' => 3,
-            ],
-            [
-                'title' => 'The Great Gatsby',
-                'author' => 'F. Scott Fitzgerald',
-                'isbn' => '9780743273565',
-                'genre' => 'Classic',
-                'description' => 'A story of the fabulously wealthy Jay Gatsby and his love for Daisy Buchanan.',
+                'title' => 'Deep Work',
+                'author' => 'Cal Newport',
+                'isbn' => '9781455586691',
+                'genre' => 'Productivity',
+                'description' => 'Rules for focused success in a distracted world.',
                 'total_copies' => 4,
                 'available_copies' => 4,
             ],
-            // Additional books
             [
-                'title' => 'Pride and Prejudice',
-                'author' => 'Jane Austen',
-                'isbn' => '9781503290563',
-                'genre' => 'Classic',
-                'description' => 'Romantic novel of manners.',
+                'title' => 'Sapiens: A Brief History of Humankind',
+                'author' => 'Yuval Noah Harari',
+                'isbn' => '9780062316097',
+                'genre' => 'History',
+                'description' => 'Exploring the history of human evolution and civilization.',
                 'total_copies' => 6,
                 'available_copies' => 6,
             ],
+            // Additional books
             [
-                'title' => 'The Hobbit',
-                'author' => 'J.R.R. Tolkien',
-                'isbn' => '9780547928227',
-                'genre' => 'Fantasy',
-                'description' => 'Fantasy novel about the adventures of Bilbo Baggins.',
-                'total_copies' => 4,
-                'available_copies' => 4,
+                'title' => 'The Alchemist',
+                'author' => 'Paulo Coelho',
+                'isbn' => '9780062315007',
+                'genre' => 'Fiction',
+                'description' => 'A shepherd boy\'s journey to discover his personal legend.',
+                'total_copies' => 7,
+                'available_copies' => 7,
+            ],
+            [
+                'title' => 'Atomic Habits',
+                'author' => 'James Clear',
+                'isbn' => '9780735211292',
+                'genre' => 'Self-Help',
+                'description' => 'Tiny changes, remarkable results - building good habits.',
+                'total_copies' => 5,
+                'available_copies' => 5,
             ]
         ];
         $createdBooks = collect();
