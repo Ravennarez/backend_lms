@@ -11,15 +11,17 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // Create admin user
-        $admin = User::create([
-            'name' => 'Library Admin',
-            'email' => 'admin@library.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password123'), // More secure password
-            'role' => 'admin',
-            'remember_token' => Str::random(10),
-        ]);
+        // Safely create or update admin user
+        $admin = User::updateOrCreate(
+            ['email' => 'admin@library.com'],
+            [
+                'name' => 'Library Admin',
+                'email_verified_at' => now(),
+                'password' => Hash::make('password123'), // More secure password
+                'role' => 'admin',
+                'remember_token' => Str::random(10),
+            ]
+        );
         // Create regular users
         $users = User::factory()->count(10)->create([
             'role' => 'user',
